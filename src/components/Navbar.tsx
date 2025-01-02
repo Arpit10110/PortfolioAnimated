@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <>
         <nav className='flex justify-between px-[2rem] items-center min-h-[15vh]'>
-            <h2 className='henny-font text-[3rem]  cursor-default tracking-wider  ' >
+            <h2 className='Playwrite-font text-[3rem]  cursor-default tracking-wider  ' >
             <SplitText text="Arpit" className="text-[3rem] text-white" delay={100} />
             </h2>
             <div className='flex gap-[2rem] text-[1.8rem] z-10 '>

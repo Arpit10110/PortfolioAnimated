@@ -1,8 +1,9 @@
-import Sec1 from "@/components/Sec1"
+import Section1 from "@/components/Section1"
+
 const page = () => {
   return (
     <>
-      <Sec1/>
+      <Section1/>
     </>
   )
 }
