@@ -8,11 +8,10 @@ const Section1 = () => {
     <>
     <Navbar/>
     <div>
-        <div className='flex items-center justify-center pt-[5rem]  '>
-            <h1 className='Francisco-font text-[#A5DAF1] w-[30%] text-[10rem] 
-            text-end'>Hi I'm</h1>
-            <div className='w-[20%] border-gray-500 px-[2rem] pt-[2rem] rounded-[1rem]
-             mx-[5rem] rotate-[5deg] '>
+        <div className='flex items-center justify-center pt-[5rem] cursor-default  '>
+            <h1 className='Francisco-font text-[#A5DAF1] w-[30%] text-[10rem] text-end'>Hi<span className=''> I'm</span></h1>
+            <div className='w-[20%] border-gray-500 px-[2rem] pt-[2rem] bg-[#1D1D1D] rounded-[1rem]
+             mx-[5rem] rotate-[6deg] relative transition-transform hover:top-[-15px] cursor-pointer'>
                 <Image className='w-full' src={PortfolioImg} alt='Hehe'  />
             </div>
             <div className='min-w-[30%]'>
