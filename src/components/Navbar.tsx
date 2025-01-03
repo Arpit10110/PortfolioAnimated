@@ -4,7 +4,7 @@ import { SplitText } from "./bits-ui/SplitText";
 const Navbar = () => {
   return (
     <>
-        <nav className='flex justify-between px-[2rem] items-center min-h-[15vh]'>
+        <nav className='flex justify-between px-[2rem] items-center min-h-[15vh] w-full '>
             <h2 className='Playwrite-font text-[3rem]  cursor-default tracking-wider  ' >
             <SplitText text="Arpit" className="text-[3rem] text-white" delay={100} />
             </h2>
