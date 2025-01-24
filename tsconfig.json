@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/bits-ui/BlobCursor.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/bits-ui/BlobCursor.jsx", "src/components/ui/CountUp.jsx"],
   "exclude": ["node_modules"]
 }
