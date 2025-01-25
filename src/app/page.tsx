@@ -1,9 +1,9 @@
 "use client"
 
 import Section1 from "@/components/Section1"
-import Aboutme from "@/components/Aboutme"
 import Splash from "@/components/Splash"
 import Hori from '../components/ui/hori';
+import Skills from '@/components//Skills';
 import { useState, useEffect } from 'react';
 const page = () => {
 
@@ -21,7 +21,8 @@ const page = () => {
       Isload?<Splash/>:
       <main>
          <Section1 />
-        <Hori />
+         <Hori />
+         <Skills />
       </main>
     }
     </>
