@@ -9,7 +9,7 @@ const Aboutme = () => {
     }, [])
   return (
    <>
-   <div className='my-[10rem] flex justify-between px-[3rem] items-center poppins-font  '>
+   <div className='my-[8rem] flex justify-between px-[3rem] items-center poppins-font  '>
         <div data-aos="fade-right"  className='w-[20%] text-[4rem] ' >
             <h1>About me</h1>
         </div>

@@ -2,7 +2,9 @@
 
 import Section1 from "@/components/Section1"
 import Splash from "@/components/Splash"
+import MarqueeC from "@/components/MarqueeC"
 import Hori from '../components/ui/hori';
+import Hs from '../components/ui/Hs';
 import Skills from '@/components//Skills';
 import { useState, useEffect } from 'react';
 const page = () => {
@@ -22,7 +24,10 @@ const page = () => {
       <main>
          <Section1 />
          <Hori />
-         <Skills />
+         <MarqueeC/>
+         <Hs/>
+         <Hori />
+         {/* <Skills /> */}
       </main>
     }
     </>
