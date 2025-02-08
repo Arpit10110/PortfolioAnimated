@@ -23,8 +23,7 @@ const Section1 = () => {
     }, [])
   return (
     <>
-        <main>
-        {/* <SplashCursor /> */}
+        <main className='overflow-hidden mb-[8rem]' >
         <Spotlight
             gradientFirst={"radial-gradient(50% 50% at 50% 50%, hsla(270, 40%, 30%, 0.1) 0%, hsla(280, 50%, 25%, 0.2) 60%, transparent 100%)"}
             gradientSecond={"radial-gradient(50% 50% at 50% 50%, hsla(210, 30%, 30%, 0.1) 0%, hsla(220, 40%, 20%, 0.2) 70%, transparent 100%)"}
@@ -33,10 +32,10 @@ const Section1 = () => {
             <Navbar/>
             <div className='mt-[1rem] relative min-h-[80vh]' >
                 <div>
-                    <pre data-aos="fade-down"  data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" className='text-white oswald-font text-[13rem] text-center font-[500] tracking-wide' >ARPIT  AGRAHARI</pre>
+                    <pre data-aos="fade-down"  data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" className='text-white oswald-font text-[13rem] text-center font-[500] tracking-wide  below-lap:text-[10rem]  ' >ARPIT  AGRAHARI</pre>
                 </div>
-                <div className='flex justify-between px-[4rem] mt-[3rem] min-h-[35vh] items-center' >
-                    <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-in-out" className='flex flex-col gap-[2rem] justify-start items-start w-[25%] '>
+                <div className='flex justify-between px-[4rem] mt-[3rem] min-h-[35vh] items-center below-lap:px-[1rem] flex-wrap  below-lap:gap-[3rem] below-lap:justify-center ' >
+                    <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-in-out" className='flex flex-col gap-[2rem] justify-start items-start w-[25%] below-lap:w-[50%] '>
                         <div className='!text-[3rem]  '>
                             <TypeAnimation
                                 sequence={[
@@ -69,10 +68,10 @@ const Section1 = () => {
                             <a href="https://x.com/ArpitAgrahari26?t=IyDaE6R8sNL10VQlozEYrQ&s=09"  className='!text-[3rem] hover:scale-[1.2] transition-all ' ><XIcon className='!text-[3rem]' /></a>
                         </div>
                     </div>
-                    <div data-aos="zoom-in-up" data-aos-delay="1500" data-aos-duration="1000" className='w-[20vw] bg-gray-900 rounded-[5px] absolute bottom-[0%] right-[44%] border-[1px] border-gray-700  ' >
+                    <div data-aos="zoom-in-up" data-aos-delay="1500" data-aos-duration="1000" className='w-[20vw] bg-gray-900 rounded-[5px] absolute bottom-[0%] right-[44%] border-[1px] border-gray-700 below-lap:relative  below-lap:right-0 below-lap:w-[30vw]    ' >
                         <Image className='w-full' src={PortfolioImg} alt='arpit' />
                     </div>
-                    <div data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000" className='w-[35%] gap-[2rem] flex flex-col items-start text-[2.5rem] poppins-font font-[400]  '>
+                    <div data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000" className='w-[35%] gap-[2rem] flex flex-col items-start text-[2.5rem] poppins-font font-[400] below-lap:w-[80%]   '>
                         <p>Hi, I'm Arpit, a Full Stack Developer turning ideas into powerful, user-friendly digital solutions.</p>
                         <Link href={"/contact"} className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(125deg,#000000,45%,#28292b,55%,#000000)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 py-[2rem] hover:scale-[1.03] transition-all " >Get In Touch</Link>
                         

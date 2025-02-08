@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'below-lap': { 'max': '800px' }, // custom breakpoint for below 600px
+        'below-tab': { 'max': '650px' }, // custom breakpoint for below 600px
+        'below-mob': { 'max': '350px' }, // custom breakpoint for below 600px
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

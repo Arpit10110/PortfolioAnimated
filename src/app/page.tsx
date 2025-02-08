@@ -14,14 +14,14 @@ const page = () => {
    useEffect(() => {
     setTimeout(()=>{
       SetIsload(false)
-    }, 4000);
+    }, 1000);
    }, [])
    
   return (
     <>
     {
       Isload?<Splash/>:
-      <main>
+         <main>
          <Section1 />
          <Hori />
          <MarqueeC/>

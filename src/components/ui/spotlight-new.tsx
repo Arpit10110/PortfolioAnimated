@@ -36,7 +36,7 @@ export const Spotlight = ({
       transition={{
         duration: 1.5,
       }}
-      className="pointer-events-none absolute inset-0 h-full w-full"
+      className="overflow-hidden pointer-events-none absolute inset-0 h-[200vh] w-full "
     >
       <motion.div
         animate={{
@@ -48,7 +48,7 @@ export const Spotlight = ({
           repeatType: "reverse",
           ease: "easeInOut",
         }}
-        className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none"
+        className="absolute top-0 left-0 w-screen h-full z-40 pointer-events-none"
       >
         <div
           style={{

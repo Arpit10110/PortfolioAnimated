@@ -9,7 +9,7 @@ import Aboutme from '../Aboutme';
 
 export default function Hori(): JSX.Element {
     return (
-      <ReactLenis root>
+         <ReactLenis root>
         <main>
           <article>
             <section className='text-white  h-screen  w-full bg-black grid place-content-center sticky top-0'>

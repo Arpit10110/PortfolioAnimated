@@ -37,3 +37,16 @@ body::-webkit-scrollbar {
 .poppins-font{
   font-family: "Poppins", serif;
 }
+
+
+@media only screen and (width<=800px) {
+  html{
+    font-size: 60%;
+  }
+}
+
+@media only screen and (width<=650px) {
+  html{
+    font-size: 55%;
+  }
+}

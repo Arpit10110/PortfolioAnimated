@@ -14,7 +14,7 @@ const Navbar = () => {
             <h2 className='Playwrite-font text-[3rem]  cursor-default tracking-wider  ' >
             <SplitText text="Arpit" className="text-[3rem] text-white oswald-font" delay={100} />
             </h2>
-            <div className='flex gap-[2rem] text-[1.8rem] z-10 '>
+            <div className='flex gap-[2rem] text-[1.8rem] z-10 below-lap:hidden '>
                 <Link className='hover:scale-[0.95] transition-all  '  href={"/"}>Home</Link>
                 <Link className='hover:scale-[0.95] transition-all  '  href={"/service"}>Service</Link>
                 <Link className='hover:scale-[0.95] transition-all  '  href={"/projects"}>Projects</Link>
