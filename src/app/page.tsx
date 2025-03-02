@@ -7,6 +7,7 @@ import Hori from '../components/ui/hori';
 import Hs from '../components/ui/Hs';
 import Skills from '@/components//Skills';
 import { useState, useEffect } from 'react';
+import ImageReveal2 from '../components/ui/Imagerevel';
 const page = () => {
 
   const [Isload,SetIsload] = useState(true);
@@ -28,6 +29,7 @@ const page = () => {
          <Hs/>
          <Hori />
          {/* <Skills /> */}
+         {/* <ImageReveal2/> */}
       </main>
     }
     </>
@@ -35,3 +37,6 @@ const page = () => {
 }
 
 export default page
+
+
+// aaj sa chalu portfolio pa kaam

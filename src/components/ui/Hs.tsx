@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import frontend from "@/assets/frontend.png"
 import backend from "@/assets/backend.png"
+import tools from "@/assets/tools.png"
 export default function Index(): React.ReactElement {
     useEffect(() => {
         AOS.init();
@@ -57,6 +58,25 @@ export default function Index(): React.ReactElement {
                 <div className='w-[30%] flex items-end ' >
                     <Image className='w-full'  src={backend} alt='frontendImage'  />
                 </div>
+            </div>
+          </section>
+          <section className='bg-gray-300 text-black grid place-content-center h-screen sticky top-0 rounded-tr-2xl rounded-tl-2xl overflow-hidden'>
+            <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+            <div className='flex justify-around w-[95vw] ' >
+            <div className='w-[60%]'>
+                <h1 className='text-[4rem] font-semibold poppins-font'>Tools</h1>
+                <h4 className='text-[1.5rem] poppins-font mt-[0.4rem] text-gray-800'>Enhancing development, collaboration, and deployment efficiency.</h4>
+                <div className='flex flex-col gap-[2rem] text-[2.5rem] mt-[4rem] oppins-font'>
+                    <h2><span className='font-semibold'>GitHub</span>: Version control and seamless collaboration🔗</h2>
+                    <h2><span className='font-semibold'>Docker</span>: Containerization for efficient deployment🐳</h2>
+                    <h2><span className='font-semibold'>Figma</span>: UI/UX design and prototyping🎨</h2>
+                    <h2><span className='font-semibold'>Canva</span>: Quick and creative design solutions🖌️</h2>
+                    <h2><span className='font-semibold'>AWS</span>: Cloud services for scalable applications☁️</h2>
+                </div>
+            </div>
+            <div className='w-[30%] flex items-end ' >
+              <Image className='w-full'  src={tools} alt='toolsImage'  />
+            </div>
             </div>
           </section>
         </article>
