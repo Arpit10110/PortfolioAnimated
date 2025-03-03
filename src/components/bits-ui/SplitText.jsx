@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 
 export const SplitText = ({ text, className = '', delay = 100 ,classGName=''}) => {
     const letters = text.split(/(?=\s|\S)/);
-    console.log(letters);
   const [inView, setInView] = useState(false);
   const ref = useRef();
 
