@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <meta name="google-site-verification" content="XT0nYe__4mxz7yNohm0n6d6EcqKd1q5j8Ly0FGWKchA" />
         <link rel="canonical" href="https://arpitdev.vercel.app" />
         <meta name="publisher" content="Arpit Agrahari" />
         <meta name="author" content="Arpit Agrahari" />
@@ -60,7 +61,6 @@ export default function RootLayout({
         <meta name="twitter:description" content="MERN Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions." />
         <meta name="twitter:image" content="/favicon.jpg" />
 
-        <meta name="google-site-verification" content="XT0nYe__4mxz7yNohm0n6d6EcqKd1q5j8Ly0FGWKchA" />
 
         <title>Arpit Agrahari - MERN Stack Developer</title>
       </head>
