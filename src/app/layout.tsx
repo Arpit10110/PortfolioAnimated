@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { Suspense } from "react";
+import Loading from "./loading";
 export const metadata: Metadata = {
   title: "Arpit Agrahari - MERN Stack Developer",
   description: "MERN Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions.",
@@ -65,7 +66,9 @@ export default function RootLayout({
         <title>Arpit Agrahari - MERN Stack Developer</title>
       </head>
       <body>
+        <Suspense fallback={<Loading/>} >
         {children}
+        </Suspense>
       </body>
     </html>
   );
