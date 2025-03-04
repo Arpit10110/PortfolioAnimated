@@ -6,6 +6,7 @@ import MarqueeC from "@/components/MarqueeC"
 import Hori from '../components/ui/hori';
 import Hs from '../components/ui/Hs';
 import Experience from '@/components/Experience';
+import Contact from '@/components/Contact';
 import ImageReveal2 from '../components/ui/Imagerevel';
 const page = async() => {
   
@@ -19,6 +20,7 @@ const page = async() => {
           <MarqueeC/>
           <Hs/>
           <Experience/>
+          <Contact/>
          {/* <ImageReveal2/> */}
         </div>
     </>
