@@ -28,5 +28,3 @@ const page = async() => {
 }
 
 export default page
-
-//aaj main nahi kar rah hai code ka
