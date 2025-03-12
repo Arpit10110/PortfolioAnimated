@@ -10,7 +10,7 @@ import Contact from '@/components/Contact';
 import ImageReveal2 from '../components/ui/Imagerevel';
 const page = async() => {
   
-  await new Promise((resolve) => setTimeout(resolve, 5000)); 
+  // await new Promise((resolve) => setTimeout(resolve, 5000)); 
 
   return (
     <>

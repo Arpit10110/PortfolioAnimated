@@ -54,9 +54,9 @@ const Experience =async() => {
               }
           </div>
         <div className='w-1/2 z-[5] ' >
-              <Spline
-        scene="https://prod.spline.design/t-quCfJO9Z8Q9pnv/scene.splinecode"
-        />
+              {/* <Spline */}
+        // scene="https://prod.spline.design/t-quCfJO9Z8Q9pnv/scene.splinecode"
+        {/* /> */}
           </div>
       </div>
     </div>
