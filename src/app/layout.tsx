@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arpit Agrahari - MERN Stack Developer",
+    title: "Arpit Agrahari - Full Stack Developer",
     description: "MERN Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions.",
     images: ["https://arpitdev.vercel.app/favicon.jpg"], // Make sure this image exists
   },
@@ -50,7 +50,7 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="Arpit Agrahari - MERN Stack Developer" />
+        <meta property="og:title" content="Arpit Agrahari - Full Stack Developer" />
         <meta property="og:description" content="Building scalable web apps using React, Next.js, Node.js, and MongoDB." />
         <meta property="og:image" content="/favicon.jpg" />
         <meta property="og:url" content="https://arpitdev.vercel.app" />
@@ -58,7 +58,7 @@ export default function RootLayout({
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Arpit Agrahari - MERN Stack Developer" />
+        <meta name="twitter:title" content="Arpit Agrahari - Full Stack Developer" />
         <meta name="twitter:description" content="MERN Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions." />
         <meta name="twitter:image" content="/favicon.jpg" />
 
