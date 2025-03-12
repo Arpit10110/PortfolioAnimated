@@ -1,5 +1,6 @@
 import React from 'react'
 import Spline from '@splinetool/react-spline/next';
+import Expsmooth from './bits-ui/expsmoothscrool';
 
 const Experience =async() => {
 
@@ -37,9 +38,9 @@ const Experience =async() => {
 
   return (
    <>
-    <div className='w-full my-[10rem]   ' >
-      <h1 className="text-center text-[4rem]   "  >Experience</h1>
-      <div className='w-full flex justify-around ' >
+    <div className='w-full mb-[10rem] bg-slate-950 pt-[10rem]   ' >
+      <h1 className="text-center text-[3.5rem]   "  >🛠  Built with Experience 🛠</h1>
+      {/* <div className='w-full flex justify-around ' >
         <div className='  w-1/2  mt-[8rem]  flex flex-col gap-[3rem] justify-center items-center z-0 ' >
               {
                 expdata.map((i,index)=>{
@@ -53,12 +54,12 @@ const Experience =async() => {
                 })
               }
           </div>
-        <div className='w-1/2 z-[5] ' >
-              {/* <Spline */}
-        // scene="https://prod.spline.design/t-quCfJO9Z8Q9pnv/scene.splinecode"
-        {/* /> */}
-          </div>
-      </div>
+      </div> */}
+
+
+      <Expsmooth/>
+
+
     </div>
    </>
   )
