@@ -18,10 +18,9 @@ const Contact = () => {
 
   return (
     <>
-      <div className="my-[10rem] w-full  flex justify-around ">
-        {/* ✅ Meteors Component Now Works Without Hydration Error */}
+      <div className="my-[10rem] w-full flex-wrap  below-lap:gap-[5rem]  flex justify-around ">
 
-        <div className="w-[50%] mt-[5rem] flex flex-wrap justify-around flex-col gap-[3rem]">
+        <div className="w-[50%] below-lap:w-[90%] mt-[5rem] flex flex-wrap justify-around flex-col gap-[3rem]">
           <h1
             data-aos="fade-right"
             data-aos-delay="50"
@@ -94,7 +93,7 @@ const Contact = () => {
           </form>
         </div>
 
-        <div   data-aos="flip-left"data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" className="w-[40%] flex justify-center gap-[2rem] flex-col   " >
+        <div   data-aos="flip-left"data-aos-delay="80" data-aos-duration="1500" data-aos-easing="ease-in-out" className="w-[40%] below-lap:w-[90%] flex justify-center gap-[2rem] flex-col   " >
             <div className="flex flex-col gap-[0.5rem]  " >
               <h2 className="font-semibold text-gray-300 text-[2rem] " >Phone</h2>
               <a href="tel:+919599056856" className="!text-[2rem]  " ><CallIcon className="!text-[3rem] mr-[1rem] bg-blue-600  p-[0.5rem] rounded-[50%]    " />+919599056856</a>
