@@ -24,17 +24,17 @@ export default function Index(): React.ReactElement {
           </section>
           <section className='bg-gray-300 text-black grid place-content-center h-screen sticky top-0 rounded-tr-2xl rounded-tl-2xl overflow-hidden'>
             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
-            <div className='flex justify-around w-[95vw] below-lap:w-[100vw] flex-wrap ' >
+            <div className='flex justify-around w-[95vw] below-lap:w-[100vw] flex-wrap below-lap:gap-[2rem] ' >
                 <div className='w-[60%] below-lap:w-[95%]  '>
                     <h1 className='text-[4rem] font-semibold poppins-font below-lap:text-[3rem] ' >Frontend</h1>
                     <h4 className='text-[1.5rem] poppins-font mt-[0.4rem] text-gray-800 ' >Crafting engaging, interactive, and responsive web experiences.</h4>
-                    <div className='flex flex-col gap-[2rem] text-[2.5rem] mt-[4rem] oppins-font below-lap:mt-[1rem] below-lap:text-[2rem] '>
-                        <h2><span className='font-semibold '>React</span>: For dynamic, component-based development🌟</h2>
-                        <h2><span className='font-semibold '>HTML</span>: The foundation for structured content📄</h2>
-                        <h2><span className='font-semibold '>CSS</span>: Crafting responsive and elegant layouts🎨</h2>
-                        <h2><span className='font-semibold '>JavaScript</span>: Adding interactivity and functionality⚡</h2>
-                        <h2><span className='font-semibold '>Tailwind CSS</span>: Rapidly building custom, responsive designs🚀</h2>
-                    </div>
+                    <div className='flex flex-col gap-[2rem] text-[2rem] mt-[2rem] oppins-font below-lap:mt-[1rem]  '>
+                            <p className='font-semibold'>
+                                React brings dynamic, component-based development, while HTML lays the foundation.  
+                                CSS crafts beautiful, responsive layouts, and JavaScript adds interactivity and power.  
+                                Tailwind CSS makes styling faster and more efficient, letting you build sleek designs effortlessly. 🚀  
+                            </p>
+                        </div>
                 </div>
                 <div className='w-[30%] flex items-end below-lap:w-[35%] ' >
                     <Image className='w-full'  src={frontend} alt='frontendImage'  />
@@ -43,16 +43,16 @@ export default function Index(): React.ReactElement {
           </section>
           <section className='text-white h-screen w-full bg-slate-950 grid place-content-center sticky top-0'>
             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
-            <div className='flex justify-around w-[95vw] below-lap:w-[100vw] flex-wrap ' >
+            <div className='flex justify-around w-[95vw] below-lap:w-[100vw] flex-wrap below-lap:gap-[2rem] ' >
             <div className='w-[60%] below-lap:w-[95%] '>
                 <h1 className='text-[4rem] font-semibold poppins-font below-lap:text-[3rem] '>Backend</h1>
                 <h4 className='text-[1.5rem] poppins-font mt-[0.4rem] text-gray-200'>Building robust, scalable, and efficient server-side solutions.</h4>
-                <div className='flex flex-col gap-[2rem] text-[2.5rem] mt-[4rem] oppins-font below-lap:text-[2rem] below-lap:mt-[1rem]'>
-                    <h2><span className='font-semibold'>Node.js</span>: A runtime for fast, scalable server-side apps🚀</h2>
-                    <h2><span className='font-semibold'>Express.js</span>: A lightweight framework for building APIs⚙️</h2>
-                    <h2><span className='font-semibold'>MongoDB</span>: A flexible NoSQL database for scalable storage📦</h2>
-                    <h2><span className='font-semibold'>Firebase</span>: A platform for serverless apps with real-time databases🔥</h2>
-                    <h2><span className='font-semibold'>Next.js</span>: A React framework for full-stack apps with SSR🌐</h2>
+                <div className='flex flex-col gap-[2rem] text-[2rem] mt-[2rem] oppins-font  below-lap:mt-[1rem]'>
+                    <p className='font-semibold'>
+                        Node.js powers fast, scalable backends, while Express.js simplifies API development.  
+                        MongoDB offers flexible, NoSQL storage, and Firebase enables serverless apps with real-time data.  
+                        Next.js takes React to the next level with full-stack capabilities and server-side rendering. 🚀  
+                    </p>
                 </div>
             </div>
                 <div className='w-[30%] flex items-end below-lap:w-[35%]  ' >
@@ -62,16 +62,16 @@ export default function Index(): React.ReactElement {
           </section>
           <section className='bg-gray-300 text-black grid place-content-center h-screen sticky top-0 rounded-tr-2xl rounded-tl-2xl overflow-hidden'>
             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
-            <div className='flex justify-around w-[95vw] below-lap:w-[100vw] flex-wrap ' >
+            <div className='flex justify-around w-[95vw] below-lap:w-[100vw] flex-wrap below-lap:gap-[2rem] ' >
             <div className='w-[60%] below-lap:w-[95%]'>
                 <h1 className='text-[4rem] font-semibold poppins-font below-lap:text-[3rem]'>Tools</h1>
                 <h4 className='text-[1.5rem] poppins-font mt-[0.4rem] text-gray-800'>Enhancing development, collaboration, and deployment efficiency.</h4>
-                <div className='flex flex-col gap-[2rem] text-[2.5rem] mt-[4rem] oppins-font below-lap:text-[2rem] below-lap:mt-[1rem] '>
-                    <h2><span className='font-semibold'>GitHub</span>: Version control and seamless collaboration🔗</h2>
-                    <h2><span className='font-semibold'>Docker</span>: Containerization for efficient deployment🐳</h2>
-                    <h2><span className='font-semibold'>Figma</span>: UI/UX design and prototyping🎨</h2>
-                    <h2><span className='font-semibold'>Canva</span>: Quick and creative design solutions🖌️</h2>
-                    <h2><span className='font-semibold'>AWS</span>: Cloud services for scalable applications☁️</h2>
+                <div className='flex flex-col gap-[2rem] text-[2rem] mt-[2rem] oppins-font  below-lap:mt-[1rem]'>
+                    <p className='font-semibold'>
+                        GitHub streamlines version control and collaboration, while Docker ensures efficient deployment.  
+                        Figma is perfect for UI/UX design, and Canva makes creative design effortless.  
+                        AWS powers scalable applications with reliable cloud services. ☁️🚀  
+                    </p>
                 </div>
             </div>
             <div className='w-[30%] flex items-end below-lap:w-[35%] ' >
