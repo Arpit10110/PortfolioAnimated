@@ -1,6 +1,5 @@
 'use client'
 import { SplitText } from "./bits-ui/SplitText";
-import BlobCursor from './bits-ui/BlobCursor'
 import Navbar from "./Navbar";
 function Sec1() {
   return (
@@ -9,7 +8,6 @@ function Sec1() {
         <div className="absolute  h-[100vh] opacity-25 overflow-hidden " >
             <video src="/sec1.mp4" autoPlay={true} muted={true} loop={true} className="h-fit" ></video>
         </div>
-        <BlobCursor />
         <Navbar  />
         <div className="min-h-[70vh] flex justify-center items-center cursor-default ">
             <div className="flex flex-col gap-[3rem] justify-center items-center">
