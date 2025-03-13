@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee';
 const MarqueeC = () => {
   return (
     <>
-      <div className="text-[2.5rem] flex flex-col gap-[8rem] my-[8rem] poppins-font ">
+      <div className="text-[2.5rem] flex flex-col gap-[8rem] my-[8rem] poppins-font below-lap:my-[3rem] ">
         <div className="flex bg-[#ffffff2c] py-[1.5rem] ">
           <Marquee>
             <h1 className="ml-[3rem]">Innovator at Heart ✨</h1>

@@ -21,7 +21,7 @@ const Section1 = () => {
     }, [])
   return (
     <>
-        <main className='overflow-hidden mb-[8rem]' >
+        <main className='overflow-hidden mb-[8rem] below-lap:mb-[3rem]  ' >
         <Spotlight
             gradientFirst={"radial-gradient(50% 50% at 50% 50%, hsla(270, 40%, 30%, 0.1) 0%, hsla(280, 50%, 25%, 0.2) 60%, transparent 100%)"}
             gradientSecond={"radial-gradient(50% 50% at 50% 50%, hsla(210, 30%, 30%, 0.1) 0%, hsla(220, 40%, 20%, 0.2) 70%, transparent 100%)"}
