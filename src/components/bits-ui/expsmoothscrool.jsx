@@ -92,7 +92,7 @@ export const Card = ({
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-0"
+      className="h-fit py-[10rem] flex items-center justify-center sticky top-0"
     >
       <motion.div
         style={{
