@@ -8,9 +8,6 @@ import dynamic from "next/dynamic";
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-// ✅ Dynamically import Meteors (Fixes Hydration Error)
-const Meteors = dynamic(() => import("./ui/meteors"), { ssr: false });
-
 const Contact = () => {
   useEffect(() => {
     AOS.init();
