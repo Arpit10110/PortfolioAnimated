@@ -17,7 +17,7 @@ const Contact = () => {
     <>
       <div className="my-[10rem] w-full flex-wrap  below-lap:gap-[5rem]  flex justify-around ">
 
-        <div className="w-[50%] below-lap:w-[90%] mt-[5rem] flex flex-wrap justify-around flex-col gap-[3rem]">
+        <div className="w-[50%] below-lap:w-[90%] mt-[5rem] flex flex-wrap justify-around flex-col gap-[3rem] below-tab:w-[96%] ">
           <h1
             data-aos="fade-right"
             data-aos-delay="50"

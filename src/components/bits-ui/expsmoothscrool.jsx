@@ -100,7 +100,7 @@ export const Card = ({
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className={`flex flex-col relative min-h-[50vh] below-lap:w-[90%] below-tab:w-[95%]  w-[70%] rounded-md p-10 origin-top`}
+        className={`flex flex-col relative h-fit below-lap:w-[90%] below-tab:w-[95%]  w-[70%] rounded-md p-10 origin-top`}
       >
 
         <div className='flex gap-[1rem] flex-col   ' >
