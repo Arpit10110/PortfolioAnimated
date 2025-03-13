@@ -8,8 +8,6 @@ import AOS from 'aos' ;
 import 'aos/dist/aos.css';
 import { Spotlight } from "@/components/ui/spotlight-new";
 import Link from 'next/link';
-import SplashCursor from "./ui/SplashCursor"
-import BlobCursor from './bits-ui/BlobCursor';
 //socila media
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
