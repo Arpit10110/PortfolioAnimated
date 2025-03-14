@@ -1,0 +1,66 @@
+interface frontenddata{
+    img:string,
+    name: string,
+    link:string,
+    github:string,
+    techstack:string[],
+}
+
+export const Allapi:frontenddata[] =[
+    {
+        img:"/p4.png",
+        name:"TinyClo",
+        link:"https://kudosware-testing.vercel.app/",
+        github:"https://github.com/Arpit10110/kudosware-testing",
+        techstack:["Html","CSS","JavaScript","React.js","Firebase","Node.js","Express.js","MongodB","ShopifyAdmin"]
+    },
+    {
+        img:"/p6.png",
+        name:"Kalakaari-ai",
+        link:"https://kalakaari-ai.vercel.app/",
+        github:"https://github.com/Arpit10110/Kalakaari-AI",
+        techstack:["Next.js","Aos","Razorpay","MongodB","JavaScript","Material-UI"]
+    },
+    {
+        img:"/p7.png",
+        name:"Ghumakkad",
+        link:"https://ghumakad.vercel.app/",
+        github:"https://github.com/Arpit10110/HealthBridge-frontend",
+        techstack:["Next.js","Aos","Razorpay","MongodB","TypeScript","Acerternity","Material-UI"]
+    },
+    {
+        img:"/p5.png",
+        name:"HealthBridge",
+        link:"https://healthbridges.vercel.app/",
+        github:"https://github.com/Arpit10110/HealthBridge-frontend",
+        techstack:["Html","CSS","JavaScript","React.js","Firebase","Node.js","Express.js","MongodB"]
+    },
+    {
+        img:"/p1.png",
+        name:"Ochi",
+        link:"https://ochi-arpit.vercel.app",
+        github:"https://github.com/Arpit10110/Ochi",
+        techstack:["Html","CSS","JavaScript","React.js","locomotive","Gsap"]
+    },
+    {
+        img:"/p2.png",
+        name:"Vision Pro",
+        link:"https://vision-pro-mu.vercel.app",
+        github:"https://github.com/Arpit10110/VisionPro",
+        techstack:["Html","CSS","JavaScript","React.js","locomotive","Gsap","SheryExtract"]
+    },
+    {
+        img:"/p8.png",
+        name:"Visra",
+        link:"https://visra.vercel.app/",
+        github:"https://github.com/Arpit10110/Visra",
+        techstack:["Next.js","Aos","Razorpay","MongodB","JavaScript","Material-UI"]
+    },
+    {
+        img:"/p3.png",
+        name:"Superhuman",
+        link:"https://superhuman.onrender.com/",
+        github:"https://github.com/Arpit10110/Superhuman",
+        techstack:["Html","CSS","JavaScript","React.js"]
+    },
+]
