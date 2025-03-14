@@ -8,6 +8,7 @@ import Hs from '../components/ui/Hs';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import ImageReveal2 from '../components/ui/Imagerevel';
+import OurWork from '../components/OurWork';
 const page = async() => {
   
   // await new Promise((resolve) => setTimeout(resolve, 5000)); 
@@ -19,6 +20,7 @@ const page = async() => {
           <Hori />
           <MarqueeC/>
           <Hs/>
+          <OurWork/>
           <Experience/>
           <Contact/>
          {/* <ImageReveal2/> */}
