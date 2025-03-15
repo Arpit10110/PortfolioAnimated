@@ -29,14 +29,14 @@ export function GifCard({ name, img,gif,techstack,link,github }: GifCardProps) {
       data-aos-delay="90"
       data-aos-duration="1500"
       data-aos-easing="ease-in-out"
-      className="w-[30%] bg-[#141515]  below-lap:w-[45%] below-tab:w-[70%] below-mob:w-[90%] small-mob:w-[95%] cursor-pointer  group" 
+      className="w-[30%] bg-[#141515]  below-lap:w-[45%] below-tab:w-[70%] below-mob:w-[90%]  small-mob:w-[95%] cursor-pointer  group" 
       onMouseEnter={() => setIsHovered(true)} 
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Background Image Changes on Hover */}
       <div
         className={cn(
-          "relative w-full h-[30vh]   shadow-xl mx-auto flex flex-col justify-end p-4  bg-contain bg-[#141515] transition-all duration-500"
+          "relative w-full h-[30vh] below-mob:h-[25vh]  shadow-xl mx-auto flex flex-col justify-end p-4  bg-contain bg-[#141515] transition-all duration-500"
         )}
         style={{
           backgroundImage: `url(${isHovered ? img : gif})`,
