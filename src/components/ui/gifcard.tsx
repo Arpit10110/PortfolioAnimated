@@ -29,7 +29,7 @@ export function GifCard({ name, img,gif,techstack,link,github }: GifCardProps) {
       data-aos-delay="90"
       data-aos-duration="1500"
       data-aos-easing="ease-in-out"
-      className="w-[30%] bg-[#141515]  below-lap:w-[45%] below-tab:w-[60%] small-mob:w-[90%] below-mob:w-[80%] cursor-pointer  group" 
+      className="w-[30%] bg-[#141515]  below-lap:w-[45%] below-tab:w-[70%] below-mob:w-[90%] small-mob:w-[95%] cursor-pointer  group" 
       onMouseEnter={() => setIsHovered(true)} 
       onMouseLeave={() => setIsHovered(false)}
     >
