@@ -10,6 +10,7 @@ import tools from "@/assets/tools.png"
 export default function Index(): React.ReactElement {
     useEffect(() => {
         AOS.init();
+        AOS.refresh();
     }, [])
   return (
     <ReactLenis root>

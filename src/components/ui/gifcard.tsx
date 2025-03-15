@@ -1,44 +1,65 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 interface GifCardProps {
-  name: string;
-  img: string;
+  name: string,
+  img: string,
+  gif:string,
+  techstack:string[]
 }
 
-export function GifCard({ name, img }: GifCardProps) {
+export function GifCard({ name, img,gif,techstack }: GifCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const gif="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWlodTF3MjJ3NnJiY3Rlc2J0ZmE0c28yeWoxc3gxY2VtZzA5ejF1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/syEfLvksYQnmM/giphy.gif"
+
+  useEffect(() => {
+    AOS.init()
+  AOS.refresh();
+  }, []);
 
   return (
     <div 
-      className="w-[40%] h-[60vh] group" 
+      data-aos="flip-left"
+      data-aos-delay="90"
+      data-aos-duration="1500"
+      data-aos-easing="ease-in-out"
+      className="w-[30%] bg-[#141515]  below-lap:w-[45%] below-tab:w-[60%] below-mob:w-[80%] cursor-pointer  group" 
       onMouseEnter={() => setIsHovered(true)} 
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Background Image Changes on Hover */}
       <div
         className={cn(
-          "relative w-full h-[40vh] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent bg-contain dark:border-neutral-800 transition-all duration-500"
+          "relative w-full h-[30vh]   shadow-xl mx-auto flex flex-col justify-end p-4  bg-contain bg-[#141515] transition-all duration-500"
         )}
         style={{
-          backgroundImage: `url(${isHovered ? gif : img})`,
+          backgroundImage: `url(${isHovered ? img : gif})`,
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
         {/* Dark overlay effect on hover */}
-        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 bg-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
       </div>
 
       {/* Card Content */}
-      <div className="text bg-gray-800 relative z-50 h-[20vh] p-4">
-        <h1 className="font-bold text-xl md:text-3xl text-gray-50">{name}</h1>
-        <p className="font-normal text-base text-gray-50 my-4">
-          This card displays a background GIF on hover.
-        </p>
+      <div className="text bg-[#141515] relative z-50 h-fit p-4 flex flex-col gap-[1rem] rounded-b-[5px]  ">
+        <h1 className="font-bold text-[1.5rem] md:text-3xl text-gray-50  ">{name}</h1>
+          <div className='w-full' >
+            <div className='w-[70%] flex gap-[1rem] flex-wrap  ' >
+                {
+                  techstack.map((i,index)=>{
+                    return(
+                      <span key={index} className='text-[1.2rem] text-[#A8A8A8] ' >
+                        {i}
+                      </span>
+                    )
+                  })
+                }
+            </div>
+          </div>
       </div>
     </div>
   );

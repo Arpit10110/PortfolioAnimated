@@ -5,11 +5,18 @@ import { GifCard } from './ui/gifcard';
 import { Allapi } from '@/Projectdata/AllData';
 import { Frontendapi } from '@/Projectdata/FrontendData';
 import { FullStackapi } from '@/Projectdata/FullStackData';
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const OurWork = () => {
 
     const [CurrentSection,SetCurrentSection] = useState("All");
 
 
+    useEffect(() => {
+        AOS.init()
+      AOS.refresh();
+      }, [CurrentSection]);
 
 
   return (
@@ -42,7 +49,7 @@ const OurWork = () => {
                     {
                         Allapi.map((i,index)=>{
                             return(
-                                <GifCard img={i.img} name={i.name} key={index} />
+                                <GifCard techstack={i.techstack} img={i.img} gif={i.gif} name={i.name}  key={index} />
                             )
                         })
                     }
@@ -56,7 +63,7 @@ const OurWork = () => {
                     {
                         Frontendapi.map((i,index)=>{
                             return(
-                                <GifCard img={i.img} name={i.name} key={index} />
+                                <GifCard techstack={i.techstack} gif={i.gif} img={i.img} name={i.name} key={index} />
                             )
                         })
                     }
@@ -71,7 +78,7 @@ const OurWork = () => {
                     {
                         FullStackapi.map((i,index)=>{
                             return(
-                                <GifCard img={i.img} name={i.name} key={index} />
+                                <GifCard techstack={i.techstack} gif={i.gif} img={i.img} name={i.name} key={index} />
                             )
                         })
                     }
