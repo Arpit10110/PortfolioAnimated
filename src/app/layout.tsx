@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Suspense } from "react";
-import Loading from "./loading";
+import {ReactLenis} from "@/lib/lenis"
 export const metadata: Metadata = {
   title: "Arpit Agrahari - Full Stack Developer",
   description: "Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions.",
@@ -66,9 +65,9 @@ export default function RootLayout({
         <title>Arpit Agrahari - Full Stack Developer</title>
       </head>
       <body>
-        <Suspense fallback={<Loading/>} >
+        <ReactLenis root>
         {children}
-        </Suspense>
+        </ReactLenis>
       </body>
     </html>
   );

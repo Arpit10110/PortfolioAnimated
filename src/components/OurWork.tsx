@@ -21,7 +21,7 @@ const OurWork = () => {
 
   return (
     <>
-        <div className='my-[8rem]'  >
+        <div id='projects' className='my-[8rem]'  >
             <div>
                 <Marquee speed={150} >
                     <h2 className='rye-font ml-[10rem]  text-[5rem]  '  >My Work</h2>
@@ -49,7 +49,7 @@ const OurWork = () => {
                     {
                         Allapi.map((i,index)=>{
                             return(
-                                <GifCard techstack={i.techstack} img={i.img} gif={i.gif} name={i.name}  key={index} />
+                                <GifCard link={i.link} github={i.github} techstack={i.techstack} img={i.img} gif={i.gif} name={i.name}  key={index} />
                             )
                         })
                     }
@@ -63,7 +63,7 @@ const OurWork = () => {
                     {
                         Frontendapi.map((i,index)=>{
                             return(
-                                <GifCard techstack={i.techstack} gif={i.gif} img={i.img} name={i.name} key={index} />
+                                <GifCard link={i.link} github={i.github}  techstack={i.techstack} gif={i.gif} img={i.img} name={i.name} key={index} />
                             )
                         })
                     }
@@ -78,7 +78,7 @@ const OurWork = () => {
                     {
                         FullStackapi.map((i,index)=>{
                             return(
-                                <GifCard techstack={i.techstack} gif={i.gif} img={i.img} name={i.name} key={index} />
+                                <GifCard link={i.link} github={i.github}  techstack={i.techstack} gif={i.gif} img={i.img} name={i.name} key={index} />
                             )
                         })
                     }

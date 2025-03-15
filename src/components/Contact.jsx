@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { BackgroundBeams } from "./ui/background-beams";
 const Contact = () => {
   useEffect(() => {
     AOS.init()
@@ -16,7 +17,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="my-[10rem] w-full flex-wrap  below-lap:gap-[5rem]  flex justify-around ">
+      <div id="contact" className="relative my-[10rem] w-full flex-wrap  below-lap:gap-[5rem]  flex justify-around ">
 
         <div className="w-[50%] relative below-lap:w-[90%] mt-[5rem] flex flex-wrap justify-around flex-col gap-[3rem] below-tab:w-[96%] ">
           <h1
@@ -109,6 +110,8 @@ const Contact = () => {
             </div>
 
         </div>
+
+         
 
       </div>
     </>

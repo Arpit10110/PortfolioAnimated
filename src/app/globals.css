@@ -66,3 +66,8 @@ body::-webkit-scrollbar {
     font-size: 50%;
   }
 }
+@media only screen and (width<=400px) {
+  html{
+    font-size: 47%;
+  }
+}

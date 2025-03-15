@@ -12,6 +12,7 @@ export default {
         'below-lap': { 'max': '800px' }, 
         'below-tab': { 'max': '600px' }, 
         'below-mob': { 'max': '450px' }, 
+        'small-mob': { 'max': '400px' }, 
       },
       colors: {
         background: "var(--background)",

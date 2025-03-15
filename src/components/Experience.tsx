@@ -1,7 +1,6 @@
 import React from 'react'
 import Spline from '@splinetool/react-spline/next';
 import Expsmooth from './bits-ui/expsmoothscrool';
-
 const Experience =async() => {
 
   interface Experiencetype{
@@ -38,7 +37,7 @@ const Experience =async() => {
 
   return (
    <>
-    <div className='w-full mb-[10rem] bg-slate-950 pt-[10rem]   ' >
+    <div className='relative w-full mb-[10rem] bg-slate-950 pt-[10rem]   ' >
       <h1 className="text-center text-[3.5rem]   "  >🛠  Built with Experience 🛠</h1>
       <Expsmooth/>
     </div>

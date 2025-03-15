@@ -30,7 +30,7 @@ const Section1 = () => {
             <Navbar/>
             <div className='mt-[1rem] relative min-h-[80vh]' >
                 <div>
-                    <pre data-aos="fade-down"  data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" className='text-white oswald-font text-[13rem]     text-center font-[500] tracking-wide  below-lap:text-[8.5rem] below-tab:text-[6.8rem]  ' >ARPIT  AGRAHARI</pre>
+                    <pre data-aos="fade-down"  data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" className='text-white oswald-font text-[13rem]     text-center font-[500] tracking-wide  below-lap:text-[8.5rem] below-tab:text-[6.8rem] small-mob:text-[6rem]  ' >ARPIT  AGRAHARI</pre>
                 </div>
                 <div className='flex justify-between px-[4rem] mt-[3rem] min-h-[35vh] items-center below-lap:px-[1rem] flex-wrap  below-lap:gap-[3rem] below-lap:justify-center below-tab:flex-col-reverse ' >
                     <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-in-out" className='flex flex-col gap-[2rem] justify-start items-start w-[25%] below-lap:w-[50%] below-tab:w-[95%] below-tab:items-center   '>

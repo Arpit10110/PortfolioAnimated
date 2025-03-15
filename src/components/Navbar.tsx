@@ -16,10 +16,9 @@ const Navbar = () => {
             </h2>
             <div className='flex gap-[2rem] text-[1.8rem] z-10 below-lap:hidden '>
                 <Link className='hover:scale-[0.95] transition-all  '  href={"/"}>Home</Link>
-                <Link className='hover:scale-[0.95] transition-all  '  href={"/service"}>Service</Link>
-                <Link className='hover:scale-[0.95] transition-all  '  href={"/projects"}>Projects</Link>
+                <Link className='hover:scale-[0.95] transition-all  '  href={"#projects"}>Projects</Link>
                 <Link className='hover:scale-[0.95] transition-all  '  href={"/certificate"}>Certificate</Link>
-                <Link className='hover:scale-[0.95] transition-all  '  href={"/contact"}>Contact Us</Link>
+                <Link className='hover:scale-[0.95] transition-all  '  href={"#contact"}>Contact Us</Link>
             </div>
         </nav>
     </>
