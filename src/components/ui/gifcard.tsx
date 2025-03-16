@@ -77,3 +77,4 @@ export function GifCard({ name, img,gif,techstack,link,github }: GifCardProps) {
     </div>
   );
 }
+// hey this is com
