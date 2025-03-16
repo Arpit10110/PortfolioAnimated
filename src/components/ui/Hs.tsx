@@ -38,7 +38,7 @@ export default function Index(): React.ReactElement {
                         </div>
                 </div>
                 <div className='w-[30%] flex items-end below-lap:w-[35%]  below-tab:w-[75%]' >
-                    <Image className='w-full'  src={frontend} alt='frontendImage'  />
+                    <Image className='w-full'  src={frontend} alt='frontendImage' loading='lazy'  />
                 </div>
             </div>
           </section>
@@ -57,7 +57,7 @@ export default function Index(): React.ReactElement {
                 </div>
             </div>
                 <div className='w-[30%] flex items-end below-lap:w-[35%] below-tab:w-[75%] ' >
-                    <Image className='w-full'  src={backend} alt='frontendImage'  />
+                    <Image className='w-full'  src={backend} alt='frontendImage' loading='lazy'  />
                 </div>
             </div>
           </section>
@@ -76,7 +76,7 @@ export default function Index(): React.ReactElement {
                 </div>
             </div>
             <div className='w-[30%] flex items-end below-lap:w-[35%] below-tab:w-[75%] ' >
-              <Image className='w-full'  src={tools} alt='toolsImage'  />
+              <Image className='w-full'  src={tools} alt='toolsImage' loading='lazy' />
             </div>
             </div>
           </section>

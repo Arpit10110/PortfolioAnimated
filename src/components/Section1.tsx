@@ -67,7 +67,7 @@ const Section1 = () => {
                         </div>
                     </div>
                     <div data-aos="zoom-in-up" data-aos-delay="1500" data-aos-duration="1000" className='w-[20vw] bg-gray-900 rounded-[5px] absolute bottom-[0%] right-[44%] border-[1px] border-gray-700 below-lap:relative  below-lap:right-0 below-lap:w-[30vw]   below-tab:w-[35%]  ' >
-                        <Image className='w-full' src={PortfolioImg} alt='arpit' />
+                        <Image className='w-full' src={PortfolioImg} alt='arpit' loading='lazy' />
                     </div>
                     <div data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000" className='w-[35%] gap-[2rem] flex flex-col items-start text-[2.5rem] poppins-font font-[400] below-lap:w-[80%] below-tab:w-[95%]  '>
                         <p>Hi, I'm Arpit, a Full Stack Developer turning ideas into powerful, user-friendly digital solutions.</p>
