@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GlowingEffect } from "./ui/glowing-effect";
@@ -8,8 +8,19 @@ import dynamic from "next/dynamic";
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { BackgroundBeams } from "./ui/background-beams";
+import { useForm } from "@formspree/react";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xwkgdvdn");
+  const formRef = useRef(null);
+
+  if (state.succeeded) {
+    toast.success("Message sent", { position: "top-right", autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "dark",});
+    document.getElementById("myForm").reset();
+    alert("Message sent");
+  } 
+
   useEffect(() => {
     AOS.init()
   AOS.refresh();
@@ -35,6 +46,7 @@ const Contact = () => {
             data-aos-delay="80"
             data-aos-duration="1500"
             data-aos-easing="ease-in-out"
+            id='myForm' onSubmit={handleSubmit} 
             className="p-[2rem] rounded-lg bg-gray-900 flex flex-col gap-[2rem] py-[4rem] shadow-[inset_-2px_0px_30px_2px_#5f8ae92b] "
           >
             <GlowingEffect
@@ -52,6 +64,7 @@ const Contact = () => {
                 type="text"
                 placeholder="First Name"
                 className="text-[1.8rem] rounded-lg p-[0.5rem] bg-black w-[48%]"
+                name="FirstName"
                 required
               />
               <input
@@ -59,26 +72,29 @@ const Contact = () => {
                 placeholder="Last Name"
                 className="text-[1.8rem] rounded-lg p-[0.5rem] bg-black w-[48%]"
                 required
+                name="LastName"
               />
             </div>
 
             <div className="w-full flex justify-between">
               <input
-                type="email"
+                type="Email"
                 placeholder="Email address"
                 className="text-[1.8rem] rounded-lg p-[0.5rem] bg-black w-[48%]"
+                name="email"
                 required
               />
               <input
                 type="text"
                 placeholder="Phone number"
                 className="text-[1.8rem] rounded-lg p-[0.5rem] bg-black w-[48%]"
+                name="Phone"
                 required
               />
             </div>
 
             <textarea
-              name="message"
+              name="Message"
               className="text-[1.8rem] w-full min-h-[30vh] p-[1rem] bg-black"
               placeholder="Message"
               required
