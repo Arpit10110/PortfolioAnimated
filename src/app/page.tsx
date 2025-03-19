@@ -10,6 +10,7 @@ import Contact from '@/components/Contact';
 import Gallary from '@/components/Gallary';
 import ImageReveal2 from '../components/ui/Imagerevel';
 import OurWork from '../components/OurWork';
+import Footer from "@/components/Footer";
 const page = async() => {
   
   // await new Promise((resolve) => setTimeout(resolve, 5000)); 
@@ -25,6 +26,7 @@ const page = async() => {
           <Experience/>
           <Contact/>
           <Gallary/>
+          <Footer/>
          {/* <ImageReveal2/> */}
         </div>
     </>
