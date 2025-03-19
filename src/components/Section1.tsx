@@ -57,7 +57,7 @@ const Section1 = () => {
                                 repeat={Infinity}
                                 />
                         </div>
-                        <a href="https://drive.google.com/file/d/1G9laUgLonBASX2Zjp1ncMQiJkJu61a3r/view" target='_blank'className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(125deg,#000000,45%,#28292b,55%,#000000)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 py-[2rem] text-[2.5rem] hover:scale-[1.03] transition-all  " >Download Resume</a>
+                        <a href="https://drive.google.com/file/d/13j-_83ZULaB6Zav4BCWdrueH0FTgPZl7/view" target='_blank'className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(125deg,#000000,45%,#28292b,55%,#000000)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 py-[2rem] text-[2.5rem] hover:scale-[1.03] transition-all  " >Download Resume</a>
                         <div className='w-[85%] justify-between flex below-lap:w-[75%] below-tab:w-[60%]  '  >
                             <a href="https://www.facebook.com/arpit.agrahari.5"  className='!text-[3rem] hover:scale-[1.2] transition-all ' ><FacebookIcon className='!text-[3rem]' /></a>
                             <a href="https://www.instagram.com/___arpit_._/"  className='!text-[3rem] hover:scale-[1.2] transition-all ' ><InstagramIcon className='!text-[3rem]' /></a>
