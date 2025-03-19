@@ -91,7 +91,7 @@ const Section2 = ({ scrollYProgress }) => {
           Images That doesn't Make any sense <br /> but still in this section
         </h1>
         <div>
-          <Marquee>
+          <Marquee speed={250} >
             {
                 image.map((i:string,index:number)=>{
                     return(

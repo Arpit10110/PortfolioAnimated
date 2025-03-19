@@ -51,7 +51,7 @@ export function GifCard({ name, img,gif,techstack,link,github }: GifCardProps) {
 
       {/* Card Content */}
       <div className="text bg-[#141515] relative z-50 h-fit p-4 flex flex-col gap-[1rem] rounded-b-[5px]  ">
-        <h1 className="font-bold text-[1.5rem] md:text-3xl text-gray-50  ">{name}</h1>
+        <h1 className="font-bold text-[1.5rem] md:text-3xl text-gray-50 below-tab:text-[2rem] ">{name}</h1>
           <div className='w-full flex items-center ' >
             <div className='w-[70%] flex gap-[1rem] flex-wrap  ' >
                 {
