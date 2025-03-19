@@ -7,6 +7,7 @@ import Hori from '../components/ui/hori';
 import Hs from '../components/ui/Hs';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
+import Gallary from '@/components/Gallary';
 import ImageReveal2 from '../components/ui/Imagerevel';
 import OurWork from '../components/OurWork';
 const page = async() => {
@@ -23,6 +24,7 @@ const page = async() => {
           <OurWork/>
           <Experience/>
           <Contact/>
+          <Gallary/>
          {/* <ImageReveal2/> */}
         </div>
     </>
