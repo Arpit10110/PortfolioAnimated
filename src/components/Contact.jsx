@@ -118,7 +118,7 @@ const Contact = () => {
               <a className="!text-[1.8rem] font-[600]  " href="mailto:omagrahari55@gmail.com" ><EmailIcon className="!text-[3rem] mr-[1rem] bg-blue-600  p-[0.5rem] rounded-[50%]    "/>omagrahari55@gmail.com</a>
             </div>
             <div className="flex flex-col gap-[0.5rem]">
-              <h2 className="font-semibold text-gray-300 text-[2rem]">Phone</h2>
+              <h2 className="font-semibold text-gray-300 text-[2rem]">Address</h2>
               <a className="!text-[2rem]  " href="https://maps.app.goo.gl/vWXLR5nxepXTLUwT6"><LocationOnIcon className="!text-[3rem] mr-[1rem] bg-blue-600  p-[0.5rem] rounded-[50%]    "/>Gamma-1,Greater Noida,India</a>
             </div>
             <div>
