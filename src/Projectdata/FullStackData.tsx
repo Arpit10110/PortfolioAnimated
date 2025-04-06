@@ -17,6 +17,14 @@ export const FullStackapi:frontenddata[] =[
         techstack:["JavaScript","React.js","Node.js","Express.js","MongodB","ShopifyAdmin"]
     },
     {
+        gif:"/p9.gif",
+        img:"/p9.png",
+        name:"ChaiCircle",
+        link:"https://chaicircle.vercel.app",
+        github:"https://github.com/Arpit10110/ChaiCircle",
+        techstack:["React.js","TypeScript","Socket.io","MongodB","Express","Material-UI"]
+    },
+    {
         gif:"/p2.gif",
         img:"/p6.png",
         name:"Kalakaari-Ai",
