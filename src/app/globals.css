@@ -8,21 +8,12 @@ html{
   font-size: 70%;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background-color: black;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
