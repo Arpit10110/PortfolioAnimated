@@ -33,6 +33,23 @@ export const GET = async(request: NextRequest) => {
           });
           //parse the output text
           const blog_topic_data = JSON.parse(interaction.output_text || "{}");
+          const queries = blog_topic_data.queries;
+          const news = queries.news;
+          const web = queries.web;
+          const youtube = queries.youtube;
+          //news query
+          const news_query_response = await axios.get(`https://newsdata.io/api/1/latest? 
+          apikey=${process.env.NEWS_API_KEY}
+          &q=${news}`)
+          const news_query_data = news_query_response?.data?.results;
+          const news_query_data_for_blog =  news_query_data.map((news: any)=>{
+            return {
+                title: news.title,
+                description: news.description,
+                image: news.image_url,
+                link: news.link,
+            }
+          })
         return NextResponse.json({ message: "Hello, World!" ,  blog_topic: blog_topic_data });
     } catch (error) {
         return NextResponse.json({ message: "Internal Server Error" , error: error }, { status: 500 });
