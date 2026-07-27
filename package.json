@@ -20,6 +20,7 @@
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.72",
     "@tabler/icons-react": "^3.26.0",
+    "@tavily/core": "^0.7.6",
     "aos": "^2.3.4",
     "axios": "^1.18.1",
     "clsx": "^2.1.1",
