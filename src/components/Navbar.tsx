@@ -18,6 +18,7 @@ const Navbar = () => {
                 <Link className='hover:scale-[0.95] transition-all  '  href={"/"}>Home</Link>
                 <Link className='hover:scale-[0.95] transition-all  '  href={"#projects"}>Projects</Link>
                 <Link className='hover:scale-[0.95] transition-all  '  href={"#contact"}>Contact Us</Link>
+                <Link className='hover:scale-[0.95] transition-all  '  href={"/blog"}>Blogs</Link>
             </div>
         </nav>
     </>

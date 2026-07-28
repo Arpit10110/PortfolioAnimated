@@ -5,7 +5,8 @@ import { GoogleGenAI } from "@google/genai";
 import { Best_Blog_SystemPrompt } from "@/utils/Best_Blog_SystemPrompt";
 import {tavily} from "@tavily/core"
 import { Blog_writer } from "@/utils/Blog_writer";
-
+import { connectDB } from "@/db/db";
+import { BlogModel } from "@/models/blog_model";
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY,
 });
@@ -15,9 +16,8 @@ const tavily_client = tavily({
 
 export const GET = async(request: NextRequest) => {
     try {
-
+        await connectDB();
         const topic = TOPIC_GROUPS[Math.floor(Math.random() * TOPIC_GROUPS.length)];
-
         const news_response = await axios.get(`https://newsdata.io/api/1/latest? 
         apikey=${process.env.NEWS_API_KEY}
         &q=${topic.query}`)
@@ -73,6 +73,9 @@ export const GET = async(request: NextRequest) => {
             Here is the list of youtube videos: ${JSON.stringify(yt_query_data)}
             Here is the list of web search results: ${JSON.stringify(web_search_query_data)}`,
           });
+          const save_blog = await BlogModel.create({
+            blog:blog_writer_response.output_text || "",
+          })
           const blog_writer_data = JSON.parse(blog_writer_response.output_text || "{}");
         return NextResponse.json({ message: "Hello, World!" ,  blog_topic: blog_topic_data, blog_writer_data: blog_writer_data });
     } catch (error) {
