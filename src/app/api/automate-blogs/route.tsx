@@ -1,91 +1,131 @@
-import { TOPIC_GROUPS } from "@/utils/topics";
-import { NextRequest, NextResponse } from "next/server";
-import axios from "axios";
-import { GoogleGenAI } from "@google/genai";
-import { Best_Blog_SystemPrompt } from "@/utils/Best_Blog_SystemPrompt";
-import {tavily} from "@tavily/core"
-import { Blog_writer } from "@/utils/Blog_writer";
-import { connectDB } from "@/db/db";
-import { BlogModel } from "@/models/blog_model";
+import { TOPIC_GROUPS } from '@/utils/topics'
+import { NextResponse } from 'next/server'
+import axios from 'axios'
+import { GoogleGenAI } from '@google/genai'
+import { Best_Blog_SystemPrompt } from '@/utils/Best_Blog_SystemPrompt'
+import { tavily } from '@tavily/core'
+import { Blog_writer } from '@/utils/Blog_writer'
+import { connectDB } from '@/db/db'
+import { BlogModel } from '@/models/blog_model'
+
+// Hobby max is 300s. Without this, Vercel often kills the function ~10–60s.
+export const maxDuration = 300
+export const dynamic = 'force-dynamic'
+
 const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
-});
-const tavily_client = tavily({
-    apiKey:process.env.WEB_SEARCH_API_KEY,
+  apiKey: process.env.GEMINI_API_KEY,
 })
 
-export const GET = async(request: NextRequest) => {
-    try {
-        await connectDB();
-        const topic = TOPIC_GROUPS[Math.floor(Math.random() * TOPIC_GROUPS.length)];
-        const news_response = await axios.get(`https://newsdata.io/api/1/latest? 
-        apikey=${process.env.NEWS_API_KEY}
-        &q=${topic.query}`)
-        const news_data = news_response?.data?.results;
-        const best_new_for_blog =  news_data.map((news: any)=>{
-            return {
-                title: news.title,
-                description: news.description,
-                image: news.image_url,
-                link: news.link,
-            }
-        })
-        const interaction = await ai.interactions.create({
-            model: "gemini-3.1-flash-lite",
-            input: `Here is the System Prompt: ${Best_Blog_SystemPrompt}
-            Here is the list of news articles: ${JSON.stringify(best_new_for_blog)}`,
-          });
-          //parse the output text
-          const blog_topic_data = JSON.parse(interaction.output_text || "{}");
-          const queries = blog_topic_data.queries;
-          const news = queries.news || [];
-          const web = queries.web;
-          const youtube = queries.youtube;
-          //news query
-          const news_query_data_for_blog = await Promise.all(news.map(async (news: string) => {
-            const news_query_response = await axios.get(`https://newsdata.io/api/1/latest? 
-            apikey=${process.env.NEWS_API_KEY}
-            &q=${news}`)
-            const news_query_data = news_query_response?.data?.results;
-            return news_query_data.map((news: any)=>{
-                return {
-                    title: news.title,
-                    description: news.description,
-                    image: news.image_url,
-                    link: news.link,
-                }
-            });
-          }))
-         
-          //yt querie
-          const yt_query_response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${youtube}&type=video&maxResults=5&order=relevance&videoEmbeddable=true&key=${process.env.YOUTUBE_API_KEY}`)
-          const yt_query_data = yt_query_response?.data?.items;
-          //web search query
-          const web_search_query_response = await tavily_client.search(web,{searchDepth:"advanced"})
-          const web_search_query_data = web_search_query_response?.results || [];
+const tavilyClient = tavily({
+  apiKey: process.env.WEB_SEARCH_API_KEY,
+})
 
+const mapNewsResults = (results: any[] = []) =>
+  results.slice(0, 5).map((news) => ({
+    title: news.title,
+    description: news.description,
+    image: news.image_url,
+    link: news.link,
+  }))
 
-          //blog writer
-          const blog_writer_response = await ai.interactions.create({
-            model: "gemini-3.1-flash-lite",
-            input: `Here is the System Prompt: ${Blog_writer}
-            Here is the list of news articles: ${JSON.stringify(news_query_data_for_blog)}
-            Here is the list of youtube videos: ${JSON.stringify(yt_query_data)}
-            Here is the list of web search results: ${JSON.stringify(web_search_query_data)}`,
-          });
-          const blog_writer_data = JSON.parse(blog_writer_response.output_text || "{}");
-          const blogMeta = blog_writer_data?.blog || {};
-          await BlogModel.create({
-            blog: blog_writer_response.output_text || "",
-            title: blogMeta.title || blog_topic_data?.selected_topic?.title || "",
-            category: (blogMeta.category || topic.id || "general").toLowerCase(),
-            summary: blogMeta.summary || "",
-            heroImage: blogMeta.heroImage || "",
-            estimatedReadMinutes: blogMeta.estimatedReadMinutes || 5,
-          });
-        return NextResponse.json({ message: "Hello, World!" ,  blog_topic: blog_topic_data, blog_writer_data: blog_writer_data });
-    } catch (error) {
-        return NextResponse.json({ message: "Internal Server Error" , error: error }, { status: 500 });
-    }
+const fetchNews = async (query: string) => {
+  const { data } = await axios.get('https://newsdata.io/api/1/latest', {
+    params: {
+      apikey: process.env.NEWS_API_KEY,
+      q: query,
+    },
+    timeout: 15000,
+  })
+  return mapNewsResults(data?.results || [])
 }
 
+export const GET = async () => {
+  try {
+    await connectDB()
+
+    const topic =
+      TOPIC_GROUPS[Math.floor(Math.random() * TOPIC_GROUPS.length)]
+
+    const seedNews = await fetchNews(topic.query)
+    if (!seedNews.length) {
+      return NextResponse.json(
+        { success: false, message: 'No news found for selected topic' },
+        { status: 404 }
+      )
+    }
+
+    const topicSelection = await ai.interactions.create({
+      model: 'gemini-3.1-flash-lite',
+      input: `Here is the System Prompt: ${Best_Blog_SystemPrompt}
+Here is the list of news articles: ${JSON.stringify(seedNews)}`,
+    })
+
+    const blogTopicData = JSON.parse(topicSelection.output_text || '{}')
+    const queries = blogTopicData.queries || {}
+    const newsQueries: string[] = (queries.news || []).slice(0, 2)
+    const webQuery: string = queries.web || topic.query
+    const youtubeQuery: string = queries.youtube || topic.query
+
+    // Run research in parallel to stay under Vercel timeout
+    const [newsQueryData, ytQueryData, webSearchData] = await Promise.all([
+      Promise.all(newsQueries.map((q) => fetchNews(q))),
+      axios
+        .get('https://www.googleapis.com/youtube/v3/search', {
+          params: {
+            part: 'snippet',
+            q: youtubeQuery,
+            type: 'video',
+            maxResults: 3,
+            order: 'relevance',
+            videoEmbeddable: true,
+            key: process.env.YOUTUBE_API_KEY,
+          },
+          timeout: 15000,
+        })
+        .then((res) => res.data?.items || [])
+        .catch(() => []),
+      tavilyClient
+        .search(webQuery, { searchDepth: 'basic', maxResults: 5 })
+        .then((res) => res.results || [])
+        .catch(() => []),
+    ])
+
+    const blogWriterResponse = await ai.interactions.create({
+      model: 'gemini-3.1-flash-lite',
+      input: `Here is the System Prompt: ${Blog_writer}
+Here is the list of news articles: ${JSON.stringify(newsQueryData)}
+Here is the list of youtube videos: ${JSON.stringify(ytQueryData)}
+Here is the list of web search results: ${JSON.stringify(webSearchData)}`,
+    })
+
+    const blogWriterData = JSON.parse(blogWriterResponse.output_text || '{}')
+    const blogMeta = blogWriterData?.blog || {}
+
+    const saved = await BlogModel.create({
+      blog: blogWriterResponse.output_text || '',
+      title: blogMeta.title || blogTopicData?.selected_topic?.title || '',
+      category: (blogMeta.category || topic.id || 'general').toLowerCase(),
+      summary: blogMeta.summary || '',
+      heroImage: blogMeta.heroImage || '',
+      estimatedReadMinutes: blogMeta.estimatedReadMinutes || 5,
+    })
+
+    return NextResponse.json({
+      success: true,
+      message: 'Blog generated successfully',
+      id: saved._id,
+      blog_topic: blogTopicData,
+      blog_writer_data: blogWriterData,
+    })
+  } catch (error) {
+    console.error('automate-blogs error:', error)
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Internal Server Error',
+        error: error instanceof Error ? error.message : 'Unknown error',
+      },
+      { status: 500 }
+    )
+  }
+}
