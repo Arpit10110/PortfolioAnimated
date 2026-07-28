@@ -17,7 +17,30 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "blog-bg": "var(--blog-bg)",
+        "blog-surface": "var(--blog-surface)",
+        "blog-surface-hover": "var(--blog-surface-hover)",
+        "blog-border": "var(--blog-border)",
+        "blog-text": "var(--blog-text)",
+        "blog-muted": "var(--blog-muted)",
+        "blog-accent": "var(--blog-accent)",
+        "blog-accent-soft": "var(--blog-accent-soft)",
       },
+      borderRadius: {
+        blog: "var(--blog-radius)",
+      },
+      spacing: {
+        "blog-gap": "var(--blog-gap)",
+        "blog-nav-x": "var(--blog-nav-pad-x)",
+        "blog-card": "var(--blog-card-pad)",
+      },
+      height: {
+        "blog-image": "var(--blog-image-height)",
+      },
+      transitionDuration: {
+        blog: "var(--blog-transition)",
+      },
+
       "animation": {
         shimmer: "shimmer 2s linear infinite"
       },

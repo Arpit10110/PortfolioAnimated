@@ -1,74 +1,92 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import {ReactLenis} from "@/lib/lenis"
+import type { Metadata } from 'next'
+import './globals.css'
+import { ReactLenis } from '@/lib/lenis'
+import {
+  JsonLdScript,
+  personJsonLd,
+  websiteJsonLd,
+} from '@/lib/seo'
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  absoluteUrl,
+} from '@/lib/site'
+
 export const metadata: Metadata = {
-  title: "Arpit Agrahari - Full Stack Developer",
-  description: "Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions.",
-  keywords: "Arpit Agrahari, MERN Stack Developer, React Developer, Next.js, Web Development, Full Stack Engineer, JavaScript, TypeScript, Node.js, MongoDB, Tailwind CSS",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  applicationName: `${SITE_NAME} Portfolio`,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  alternates: {
+    canonical: absoluteUrl('/'),
+  },
   openGraph: {
-    title: "Arpit Agrahari - Full Stack Developer",
-    description: "Building scalable web apps using React, Next.js, Node.js, and MongoDB.",
-    url: "https://arpitdev.vercel.app",
-    siteName: "Arpit Agrahari Portfolio",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: `${SITE_NAME} Portfolio`,
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
-        url: "https://arpitdev.vercel.app/favicon.jpg", // Replace with your OG image
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Arpit Agrahari - Portfolio",
+        alt: `${SITE_NAME} - Portfolio`,
       },
     ],
-    type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Arpit Agrahari - Full Stack Developer",
-    description: "MERN Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions.",
-    images: ["https://arpitdev.vercel.app/favicon.jpg"], // Make sure this image exists
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
-};
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  verification: {
+    google: 'G2swBI0MBGznGNU4S18HR_g2urdYQdP1KsL0fGd7-sM',
+  },
+  icons: {
+    icon: '/favicon.jpg',
+    shortcut: '/favicon.jpg',
+    apple: '/favicon.jpg',
+  },
+  category: 'technology',
+  other: {
+    'theme-color': '#070707',
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-      <meta name="google-site-verification" content="G2swBI0MBGznGNU4S18HR_g2urdYQdP1KsL0fGd7-sM" />
-        <link rel="canonical" href="https://arpitdev.vercel.app" />
-        <meta name="publisher" content="Arpit Agrahari" />
-        <meta name="author" content="Arpit Agrahari" />
-        <meta name="theme-color" content="#FF6F38" />
-          
-          {/* Favicon */}
-          <link rel="icon" href="https://arpitdev.vercel.app/favicon.jpg" sizes="any" />
-          <link rel="apple-touch-icon" href="https://arpitdev.vercel.app/favicon.jpg" />
-          <link rel="shortcut icon" href="https://arpitdev.vercel.app/favicon.jpg" type="image/x-icon" />
-
-        {/* ✅ Ensure Google Indexing */}
-        <meta name="robots" content="index, follow" />
-
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="Arpit Agrahari - Full Stack Developer" />
-        <meta property="og:description" content="Building scalable web apps using React, Next.js, Node.js, and MongoDB." />
-        <meta property="og:image" content="/favicon.jpg" />
-        <meta property="og:url" content="https://arpitdev.vercel.app" />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Arpit Agrahari - Full Stack Developer" />
-        <meta name="twitter:description" content="MERN Full Stack Developer | Passionate about Web Development, React, Next.js, and scalable solutions." />
-        <meta name="twitter:image" content="/favicon.jpg" />
-
-
-        <title>Arpit Agrahari - Full Stack Developer</title>
-      </head>
       <body>
-        <ReactLenis root>
-        {children}
-        </ReactLenis>
+        <JsonLdScript data={[websiteJsonLd(), personJsonLd()]} />
+        <ReactLenis root>{children}</ReactLenis>
       </body>
     </html>
-  );
+  )
 }

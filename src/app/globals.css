@@ -4,6 +4,57 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+  --blog-bg: #070707;
+  --blog-surface: #101010;
+  --blog-surface-hover: #161616;
+  --blog-border: #2b2b2b;
+  --blog-text: #f3f3f3;
+  --blog-muted: #8f8f8f;
+  --blog-accent: #efefef;
+  --blog-accent-soft: #1c1c1c;
+  --blog-radius: 1rem;
+  --blog-gap: 1.6rem;
+  --blog-nav-pad-x: 5rem;
+  --blog-card-pad: 1.8rem;
+  --blog-image-height: 22rem;
+  --blog-transition: 220ms ease;
+}
+
+.blog-page {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 40% at 10% -10%, rgba(255, 255, 255, 0.05), transparent 55%),
+    radial-gradient(ellipse 50% 30% at 90% 0%, rgba(255, 255, 255, 0.03), transparent 50%),
+    var(--blog-bg);
+}
+
+.blog-page-glow {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+  opacity: 0.35;
+}
+
+.blog-dark-input,
+.blog-dark-input option {
+  color-scheme: dark;
+  background-color: #0d0d0d !important;
+  color: var(--blog-text) !important;
+}
+
+.blog-dark-input:-webkit-autofill,
+.blog-dark-input:-webkit-autofill:hover,
+.blog-dark-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--blog-text);
+  -webkit-box-shadow: 0 0 0 1000px #0d0d0d inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 html{
   font-size: 70%;
 }
@@ -16,6 +67,21 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+}
+
+@media only screen and (width<=800px) {
+  :root {
+    --blog-nav-pad-x: 2rem;
+    --blog-image-height: 18rem;
+  }
+}
+
+@media only screen and (width<=450px) {
+  :root {
+    --blog-nav-pad-x: 1.25rem;
+    --blog-card-pad: 1.2rem;
+    --blog-image-height: 16rem;
+  }
 }
 
 body::-webkit-scrollbar {

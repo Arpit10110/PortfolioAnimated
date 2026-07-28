@@ -1,17 +1,21 @@
-"use client"
-import React from 'react'
-import Navbar from '../../components/Navbar';
-import BlogNav from '../../components/BlogNav';
+import BlogPageClient from '@/components/BlogPageClient'
+import { JsonLdScript, blogListJsonLd, breadcrumbJsonLd } from '@/lib/seo'
 
-const page = () => {
+const BlogPage = () => {
   return (
-   <>
-    <Navbar/>
-    <div>
-      <BlogNav/>
-    </div>
-   </>
+    <>
+      <JsonLdScript
+        data={[
+          blogListJsonLd(),
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+          ]),
+        ]}
+      />
+      <BlogPageClient />
+    </>
   )
 }
 
-export default page
+export default BlogPage

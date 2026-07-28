@@ -73,10 +73,16 @@ export const GET = async(request: NextRequest) => {
             Here is the list of youtube videos: ${JSON.stringify(yt_query_data)}
             Here is the list of web search results: ${JSON.stringify(web_search_query_data)}`,
           });
-          const save_blog = await BlogModel.create({
-            blog:blog_writer_response.output_text || "",
-          })
           const blog_writer_data = JSON.parse(blog_writer_response.output_text || "{}");
+          const blogMeta = blog_writer_data?.blog || {};
+          await BlogModel.create({
+            blog: blog_writer_response.output_text || "",
+            title: blogMeta.title || blog_topic_data?.selected_topic?.title || "",
+            category: (blogMeta.category || topic.id || "general").toLowerCase(),
+            summary: blogMeta.summary || "",
+            heroImage: blogMeta.heroImage || "",
+            estimatedReadMinutes: blogMeta.estimatedReadMinutes || 5,
+          });
         return NextResponse.json({ message: "Hello, World!" ,  blog_topic: blog_topic_data, blog_writer_data: blog_writer_data });
     } catch (error) {
         return NextResponse.json({ message: "Internal Server Error" , error: error }, { status: 500 });
