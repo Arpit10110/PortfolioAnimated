@@ -8,8 +8,8 @@ import { Blog_writer } from '@/utils/Blog_writer'
 import { connectDB } from '@/db/db'
 import { BlogModel } from '@/models/blog_model'
 
-// Hobby max is 300s. Without this, Vercel often kills the function ~10–60s.
-export const maxDuration = 300
+// Hobby plan max is 60s (300 blocks deploy on your plan)
+export const maxDuration = 60
 export const dynamic = 'force-dynamic'
 
 const ai = new GoogleGenAI({
@@ -21,7 +21,7 @@ const tavilyClient = tavily({
 })
 
 const mapNewsResults = (results: any[] = []) =>
-  results.slice(0, 5).map((news) => ({
+  results.slice(0, 4).map((news) => ({
     title: news.title,
     description: news.description,
     image: news.image_url,
@@ -34,7 +34,7 @@ const fetchNews = async (query: string) => {
       apikey: process.env.NEWS_API_KEY,
       q: query,
     },
-    timeout: 15000,
+    timeout: 10000,
   })
   return mapNewsResults(data?.results || [])
 }
@@ -62,13 +62,12 @@ Here is the list of news articles: ${JSON.stringify(seedNews)}`,
 
     const blogTopicData = JSON.parse(topicSelection.output_text || '{}')
     const queries = blogTopicData.queries || {}
-    const newsQueries: string[] = (queries.news || []).slice(0, 2)
+    const newsQuery: string = (queries.news || [])[0] || topic.query
     const webQuery: string = queries.web || topic.query
     const youtubeQuery: string = queries.youtube || topic.query
 
-    // Run research in parallel to stay under Vercel timeout
     const [newsQueryData, ytQueryData, webSearchData] = await Promise.all([
-      Promise.all(newsQueries.map((q) => fetchNews(q))),
+      fetchNews(newsQuery),
       axios
         .get('https://www.googleapis.com/youtube/v3/search', {
           params: {
@@ -80,12 +79,12 @@ Here is the list of news articles: ${JSON.stringify(seedNews)}`,
             videoEmbeddable: true,
             key: process.env.YOUTUBE_API_KEY,
           },
-          timeout: 15000,
+          timeout: 10000,
         })
         .then((res) => res.data?.items || [])
         .catch(() => []),
       tavilyClient
-        .search(webQuery, { searchDepth: 'basic', maxResults: 5 })
+        .search(webQuery, { searchDepth: 'basic', maxResults: 4 })
         .then((res) => res.results || [])
         .catch(() => []),
     ])
@@ -114,8 +113,8 @@ Here is the list of web search results: ${JSON.stringify(webSearchData)}`,
       success: true,
       message: 'Blog generated successfully',
       id: saved._id,
-      blog_topic: blogTopicData,
-      blog_writer_data: blogWriterData,
+      topic: topic.id,
+      title: saved.title,
     })
   } catch (error) {
     console.error('automate-blogs error:', error)

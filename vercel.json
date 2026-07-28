@@ -2,7 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "src/app/api/automate-blogs/route.tsx": {
-      "maxDuration": 300
+      "maxDuration": 60
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/automate-blogs",
+      "schedule": "0 6 * * *"
+    }
+  ]
 }
