@@ -2,6 +2,10 @@ import type { MetadataRoute } from 'next'
 import { getBlogSitemapEntries } from '@/lib/blogs'
 import { absoluteUrl } from '@/lib/site'
 
+// Always rebuild from DB so new blogs appear without redeploying
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogEntries = await getBlogSitemapEntries()
 
@@ -23,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogRoutes: MetadataRoute.Sitemap = blogEntries.map((entry) => ({
     url: absoluteUrl(`/blog/${entry.id}`),
     lastModified: new Date(entry.lastModified),
-    changeFrequency: 'weekly',
+    changeFrequency: 'daily',
     priority: 0.8,
   }))
 

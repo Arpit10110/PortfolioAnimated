@@ -31,12 +31,17 @@ export const getBlogSitemapEntries = async () => {
       .select('_id updatedAt createdAt')
       .sort({ createdAt: -1 })
       .lean()
+      .exec()
 
     return docs.map((doc) => ({
       id: String(doc._id),
-      lastModified: (doc as { updatedAt?: Date }).updatedAt || doc.createdAt || new Date(),
+      lastModified:
+        (doc as { updatedAt?: Date }).updatedAt ||
+        (doc as { createdAt?: Date }).createdAt ||
+        new Date(),
     }))
-  } catch {
+  } catch (error) {
+    console.error('getBlogSitemapEntries failed:', error)
     return []
   }
 }
