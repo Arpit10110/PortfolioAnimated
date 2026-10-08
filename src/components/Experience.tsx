@@ -3,36 +3,39 @@ import Spline from '@splinetool/react-spline/next';
 import Expsmooth from './bits-ui/expsmoothscrool';
 const Experience =async() => {
 
-  interface Experiencetype{
-    date:string,
-    company:string,
-    role:string
+  interface Experiencetype {
+    date: string;
+    company: string;
+    role: string;
+    location?: string;
   }
 
-  const expdata : Experiencetype[] = [
-
+  const expdata: Experiencetype[] = [
     {
-      date:"Jan 2025-Mar 2025",
-      company:"Visra Enterprises",
-      role:"Full Stack Developer Intern",
+      date: "Nov 2025 - Present",
+      company: "1000xDev",
+      role: "Full Stack Developer",
+      location: "Remote, India",
     },
     {
-      date:"Oct 2024-Dec 2024",
-      company:"Kudosware",
-      role:"Software Developer Intern",
+      date: "Apr 2025 - Jun 2025",
+      company: "RegisterKaro",
+      role: "Software Engineer Intern",
+      location: "Gurugram, India",
     },
     {
-      date:"March 2024-May 2024",
-      company:"Shoopy Store",
-      role:"Frontend Developer Intern",
+      date: "Jan 2025 - Feb 2025",
+      company: "Visra Enterprises",
+      role: "Full Stack Developer Intern",
+      location: "Remote, India",
     },
     {
-      date:"Dec 2023-Jan 2024",
-      company:"Edunet Foundation",
-      role:"Full Stack Developer Intern",
-    }
-
-  ]
+      date: "Oct 2024 - Dec 2024",
+      company: "Kudosware",
+      role: "Engineering Intern",
+      location: "Remote, India",
+    },
+  ];
 
 
   return (

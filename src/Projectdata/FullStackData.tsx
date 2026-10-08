@@ -9,6 +9,30 @@ interface frontenddata{
 
 export const FullStackapi:frontenddata[] =[
     {
+        gif:"/p12.gif",
+        img:"/p12.png",
+        name:"JobHawk",
+        link:"https://jobhawk.vercel.app/",
+        github:"https://github.com/Arpit10110/JobHawk-fronted",
+        techstack:["Next.js","Node.js","MongoDB","Puppeteer","Docker"]
+    },
+    {
+        gif:"/p11.gif",
+        img:"/p11.png",
+        name:"SiteGenie",
+        link:"https://sitegenies.vercel.app/",
+        github:"https://github.com/Arpit10110/SiteGenie",
+        techstack:["Next.js","NextAuth","Gemini AI API","MongoDB","Cashfree","Prisma"]
+    },
+    {
+        gif:"/p10.gif",
+        img:"/p10.png",
+        name:"Arbyte",
+        link:"https://www.npmjs.com/package/arbyte",
+        github:"https://github.com/Arpit10110/arbyte",
+        techstack:["Node.js","TypeScript","Commander","Clack","OpenRouter","npm"]
+    },
+    {
         gif:"/p1.gif",
         img:"/p4.png",
         name:"TinyClo",

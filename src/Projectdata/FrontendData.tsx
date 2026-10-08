@@ -8,6 +8,22 @@ interface frontenddata{
 }
 
 export const Frontendapi:frontenddata[] =[
+      {
+        gif:"/p12.gif",
+        img:"/p12.png",
+        name:"JobHawk",
+        link:"https://jobhawk.vercel.app/",
+        github:"https://github.com/Arpit10110/JobHawk-fronted",
+        techstack:["Next.js","Node.js","MongoDB","Puppeteer","Docker"]
+    },
+    {
+        gif:"/p11.gif",
+        img:"/p11.png",
+        name:"SiteGenie",
+        link:"https://sitegenies.vercel.app/",
+        github:"https://github.com/Arpit10110/SiteGenie",
+        techstack:["Next.js","NextAuth","Gemini AI API","MongoDB","Cashfree","Prisma"]
+    },
     {
         gif:"/p5.gif",
         img:"/p1.png",
