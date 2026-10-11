@@ -71,7 +71,7 @@ const Section1 = () => {
                         </div>
                         <div data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000" className='w-[35%] gap-[2rem] flex flex-col items-start text-[2.5rem] poppins-font font-[400] below-lap:w-[80%] below-tab:w-[95%]  '>
                             <p>Hi, I'm Arpit, a Full Stack Developer turning ideas into powerful, user-friendly digital solutions.</p>
-                            <Link href={"/contact"} className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(125deg,#000000,45%,#28292b,55%,#000000)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 py-[2rem] hover:scale-[1.03] transition-all " >Get In Touch</Link>
+                            <Link href={"/#contact"} className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(125deg,#000000,45%,#28292b,55%,#000000)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 py-[2rem] hover:scale-[1.03] transition-all " >Get In Touch</Link>
 
                         </div>
                     </div>
