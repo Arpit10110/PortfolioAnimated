@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: SITE_KEYWORDS,
-  applicationName: `${SITE_NAME} Portfolio`,
+  applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    siteName: `${SITE_NAME} Portfolio`,
+    siteName: SITE_NAME,
     locale: 'en_US',
     type: 'website',
     images: [
@@ -80,9 +80,17 @@ export const metadata: Metadata = {
     google: 'G2swBI0MBGznGNU4S18HR_g2urdYQdP1KsL0fGd7-sM',
   },
   icons: {
-    icon: '/favicon.jpg',
-    shortcut: '/favicon.jpg',
-    apple: '/favicon.jpg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   category: 'technology',
 }
