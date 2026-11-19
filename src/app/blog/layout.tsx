@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import {
   DEFAULT_OG_IMAGE,
   SITE_NAME,
+  TWITTER_HANDLE,
   absoluteUrl,
 } from '@/lib/site'
 
@@ -45,6 +46,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: blogTitle,
     description: blogDescription,
+    creator: TWITTER_HANDLE,
+    site: TWITTER_HANDLE,
     images: [DEFAULT_OG_IMAGE],
   },
   robots: {

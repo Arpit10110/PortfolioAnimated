@@ -11,6 +11,7 @@ import {
 import {
   DEFAULT_OG_IMAGE,
   SITE_NAME,
+  TWITTER_HANDLE,
   absoluteUrl,
 } from '@/lib/site'
 
@@ -83,6 +84,8 @@ export const generateMetadata = async ({
       card: 'summary_large_image',
       title,
       description,
+      creator: TWITTER_HANDLE,
+      site: TWITTER_HANDLE,
       images: [image],
     },
     robots: {

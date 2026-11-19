@@ -31,7 +31,7 @@ const Contact = () => {
       <div id="contact" className="relative my-[10rem] w-full flex-wrap  below-lap:gap-[5rem]  flex justify-around ">
 
         <div className="w-[50%] relative below-lap:w-[90%] mt-[5rem] flex flex-wrap justify-around flex-col gap-[3rem] below-tab:w-[96%] ">
-          <h1
+          <h2
             data-aos="fade-right"
             data-aos-delay="50"
             data-aos-duration="1000"
@@ -39,7 +39,7 @@ const Contact = () => {
             className="text-[2.5rem]"
           >
             🔥 Ready to Build the Future? Let's Talk!
-          </h1>
+          </h2>
 
           <form
             data-aos="flip-right"

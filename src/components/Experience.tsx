@@ -41,7 +41,7 @@ const Experience =async() => {
   return (
    <>
     <div className='relative w-full mb-[10rem] bg-slate-950 pt-[10rem]   ' >
-      <h1 className="text-center text-[3.5rem]   "  >🛠  Built with Experience 🛠</h1>
+      <h2 className="text-center text-[3.5rem]   "  >🛠  Built with Experience 🛠</h2>
       <Expsmooth/>
     </div>
    </>

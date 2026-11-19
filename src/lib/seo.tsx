@@ -5,6 +5,7 @@ import {
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
+  SOCIAL_PROFILES,
   absoluteUrl,
 } from '@/lib/site'
 import type { BlogDetail } from '@/types/blog'
@@ -15,8 +16,10 @@ export const websiteJsonLd = (): JsonLd => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: SITE_NAME,
+  alternateName: ['Arpit Agrahari Portfolio', 'arpitdev', 'arpitdev.sbs'],
   url: SITE_URL,
   description: SITE_DESCRIPTION,
+  inLanguage: 'en-US',
   publisher: {
     '@type': 'Person',
     name: SITE_NAME,
@@ -33,11 +36,41 @@ export const personJsonLd = (): JsonLd => ({
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: SITE_NAME,
+  alternateName: 'arpitdev',
   url: SITE_URL,
+  image: `${SITE_URL}/new_profile.png`,
   jobTitle: 'Full Stack Developer',
   description: SITE_DESCRIPTION,
-  sameAs: [SITE_URL],
+  sameAs: [
+    SOCIAL_PROFILES.github,
+    SOCIAL_PROFILES.linkedin,
+    SOCIAL_PROFILES.twitter,
+    SOCIAL_PROFILES.instagram,
+    SOCIAL_PROFILES.facebook,
+    SITE_URL,
+  ],
   knowsAbout: SITE_KEYWORDS,
+})
+
+export const profilePageJsonLd = (): JsonLd => ({
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  dateCreated: '2024-01-01T00:00:00Z',
+  dateModified: new Date().toISOString(),
+  mainEntity: {
+    '@type': 'Person',
+    name: SITE_NAME,
+    alternateName: 'arpitdev',
+    description: SITE_DESCRIPTION,
+    image: `${SITE_URL}/new_profile.png`,
+    sameAs: [
+      SOCIAL_PROFILES.github,
+      SOCIAL_PROFILES.linkedin,
+      SOCIAL_PROFILES.twitter,
+      SOCIAL_PROFILES.instagram,
+      SOCIAL_PROFILES.facebook,
+    ],
+  },
 })
 
 export const blogListJsonLd = (): JsonLd => ({

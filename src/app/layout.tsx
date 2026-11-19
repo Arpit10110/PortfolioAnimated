@@ -1,9 +1,10 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { ReactLenis } from '@/lib/lenis'
 import {
   JsonLdScript,
   personJsonLd,
+  profilePageJsonLd,
   websiteJsonLd,
 } from '@/lib/seo'
 import {
@@ -13,8 +14,16 @@ import {
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
+  TWITTER_HANDLE,
   absoluteUrl,
 } from '@/lib/site'
+
+export const viewport: Viewport = {
+  themeColor: '#070707',
+  colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,6 +37,7 @@ export const metadata: Metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
+  manifest: '/manifest.webmanifest',
   alternates: {
     canonical: absoluteUrl('/'),
   },
@@ -43,7 +53,7 @@ export const metadata: Metadata = {
         url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} - Portfolio`,
+        alt: `${SITE_NAME} - Full Stack Developer Portfolio`,
       },
     ],
   },
@@ -51,6 +61,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    creator: TWITTER_HANDLE,
+    site: TWITTER_HANDLE,
     images: [DEFAULT_OG_IMAGE],
   },
   robots: {
@@ -73,9 +85,6 @@ export const metadata: Metadata = {
     apple: '/favicon.jpg',
   },
   category: 'technology',
-  other: {
-    'theme-color': '#070707',
-  },
 }
 
 export default function RootLayout({
@@ -84,7 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <JsonLdScript data={[websiteJsonLd(), personJsonLd()]} />
+        <JsonLdScript data={[websiteJsonLd(), personJsonLd(), profilePageJsonLd()]} />
         <ReactLenis root>{children}</ReactLenis>
       </body>
     </html>

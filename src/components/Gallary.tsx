@@ -76,9 +76,9 @@ const Section1 = ({ scrollYProgress }) => {
     >
       <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
 
-      <h1 className='text-[5rem] rye-font below-tab:text-[3rem] below-tab:text-center '>
+      <h2 className='text-[5rem] rye-font below-tab:text-[3rem] below-tab:text-center '>
         From Code to 📸 Camera
-      </h1>
+      </h2>
       <p className='text-[2.5rem] text-center w-[80%] mt-[3rem] below-tab:w-[95%] below-mob:w-[98%] ' >
       📌 Snapshots of events, 💻 tech adventures, and 🏆 little victories—because every experience, big or small, deserves to be remembered! ✨
       </p>
@@ -99,16 +99,16 @@ const Section2 = ({ scrollYProgress }) => {
     >
       <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
       <article className='container mx-auto relative z-10 '>
-        <h1 className='text-6xl leading-[100%] py-10 font-semibold  tracking-tight below-tab:text-[3rem] below-mob:text-[2.5rem] '>
+        <h2 className='text-6xl leading-[100%] py-10 font-semibold  tracking-tight below-tab:text-[3rem] below-mob:text-[2.5rem] '>
           Images That doesn't Make any sense <br /> but still in this section
-        </h1>
+        </h2>
         <div>
           <Marquee speed={250} >
             {
                 image.map((i:string,index:number)=>{
                     return(
                         <div key={index}>
-                            <img className='w-[100%] h-[80vh] ml-[5rem] rounded-[10px]  object-contain  ' loading='lazy' src={i} alt='hello' />
+                            <img className='w-[100%] h-[80vh] ml-[5rem] rounded-[10px]  object-contain  ' loading='lazy' src={i} alt={`Gallery snapshot ${index + 1} - Arpit Agrahari`} />
                         </div>
                     )
                 })

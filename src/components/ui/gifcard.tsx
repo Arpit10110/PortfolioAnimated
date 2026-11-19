@@ -51,7 +51,7 @@ export function GifCard({ name, img,gif,techstack,link,github }: GifCardProps) {
 
       {/* Card Content */}
       <div className="text bg-[#141515] relative z-50 h-fit p-4 flex flex-col gap-[1rem] rounded-b-[5px]  ">
-        <h1 className="font-bold text-[1.5rem] md:text-3xl text-gray-50 below-tab:text-[2rem] ">{name}</h1>
+        <h3 className="font-bold text-[1.5rem] md:text-3xl text-gray-50 below-tab:text-[2rem] ">{name}</h3>
           <div className='w-full flex items-center ' >
             <div className='w-[70%] flex gap-[1rem] flex-wrap  ' >
                 {
@@ -65,10 +65,10 @@ export function GifCard({ name, img,gif,techstack,link,github }: GifCardProps) {
                 }
             </div>
             <div className='w-[30%] flex gap-[2rem] justify-center ' >
-                  <a href={github} target='_blank' title='view github repo' >
+                  <a href={github} target='_blank' rel='noopener noreferrer' title='view github repo' aria-label={`View ${name} source code on GitHub`} >
                     <GitHubIcon className='!text-[2.5rem] hover:scale-[1.05] transition-all' />
                   </a>
-                  <a href={link} target='_blank' title='visit the website'>
+                  <a href={link} target='_blank' rel='noopener noreferrer' title='visit the website' aria-label={`Visit ${name} live website`}>
                     <ArrowOutwardIcon className='!text-[2.5rem] bg-blue-500 rounded-[50%] hover:scale-[1.05] transition-all ' />
                   </a>
             </div>
