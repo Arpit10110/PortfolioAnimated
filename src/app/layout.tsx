@@ -92,6 +92,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="yWTbrO47Qho-ULgbVKuxLo0yN4QvY4SF09ekNGneKYM" />
       <body>
         <JsonLdScript data={[websiteJsonLd(), personJsonLd(), profilePageJsonLd()]} />
         <ReactLenis root>{children}</ReactLenis>
